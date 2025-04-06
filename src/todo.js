@@ -9,7 +9,6 @@ class Project
 
     // Feature to be implemented
     // If all the task in the project is complete then by default set the value of this.completed to be true
-    // If all the task in the project is not complete then cannot set project completed to be true
 
     get completed()
     {
@@ -53,9 +52,14 @@ class Project
         //
     }
 
+    // print to_do list for project
+    print_to_do()
+    {
+        console.log(this.to_do_list)
+    }
+
   
 }
-
 
 
 class Todo 
@@ -129,4 +133,16 @@ class Todo
         this.check_list = bool
     }
 
+    // change due date
+    change_due_date(new_date)
+    {
+        if (new Date(dates) == "Invalid Date")
+            {
+                throw "The date is invalid"
+            }
+        else
+            {
+                this.dueDate = new_date
+            } 
+    }
 }
