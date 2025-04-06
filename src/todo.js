@@ -35,13 +35,8 @@ class Project
         {
             throw "Cannot add new task to completed project"
         }
-        else
-        {
-            new_todo = {
-                "title":todo.title
-            }
-            this.to_do_list.push(new_todo)
-        }
+        this.to_do_list.push(todo)
+        
         
     }
 
@@ -65,6 +60,8 @@ class Project
 
 class Todo 
 {
+    registry = {}
+
     constructor(title,desctiption,dueDate,priority,notes=null)
     {
         this.title = title
@@ -73,6 +70,8 @@ class Todo
         this.priority = priority
         this.notes = notes
         this.check_list = false // will be changed to true if user completes the task
+            // Get a reference to itself
+        registry[title] = this
     }
 
     get priority()
@@ -130,5 +129,4 @@ class Todo
         this.check_list = bool
     }
 
-    // Get a reference to a objects
 }
