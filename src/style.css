@@ -1,0 +1,19 @@
+header, footer
+{
+    background-color: blue;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+footer
+{
+    background-color: brown;
+}
+main
+{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
