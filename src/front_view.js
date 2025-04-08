@@ -15,4 +15,23 @@ function insert_element(parent,element_name, class_or_id, attribute_name)
     parent.appendChild(content)
 }
 
-export {insert_element}
+function flick(button_id, id_class)
+{
+
+    document.addEventListener('DOMContentLoaded', function()
+{
+    let m = document.querySelector(button_id)
+    m.addEventListener('click',function()
+    {
+    let flicking = document.querySelector(`${id_class}`)
+    if (flicking.style.display == "none" )
+    {flicking.style.display = "block"}
+    else
+    {
+        flicking.style.display = "none"
+    } 
+    }
+    )
+})
+}
+export {insert_element, flick}
