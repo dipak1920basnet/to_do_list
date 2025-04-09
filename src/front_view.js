@@ -31,6 +31,9 @@ pass button class and id class
 })
 }
 
+//list of projects 
+let project_list=[]
+
 // when submitted take the input data and add project_name and (add,remove,edit) features
 function add_projects()
 {
@@ -42,12 +45,19 @@ function add_projects()
         const Project_info = {
             names : formData.get("Projectname")
         };
+
+        // Create a projects
+        let hello = new Project(Project_info['names'])
+        project_list.push(hello)
+        // adds projects to a list 
+
         let t = document.querySelector(".main_content")
         insert_element(t,"div", "class", 'projectsname')
-        // let k = document.querySelector(".projectsname")
-        // k.innerHTML = `<h1>${Project_info['names']}</h1>`
-
-        return (new Project(Project_info['names']).print_to_do())
+        let kList = document.querySelectorAll(".projectsname")
+        
+        let k = kList[kList.length-1]
+        k.innerHTML = `<h1>${Project_info['names']}</h1>
+                        <button data-project_name = "${hello.project_name}">Add to do</button>`
 
     })
 }
