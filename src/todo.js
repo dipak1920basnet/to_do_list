@@ -75,7 +75,7 @@ class Project
     // print to_do list for project
     print_to_do()
     {
-        console.log(this.to_do_list)
+        console.log(`${this.project_name} has ${this.to_do_list}`)
     }
 }
 

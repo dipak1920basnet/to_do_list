@@ -1,4 +1,4 @@
-import {insert_element, flick} from "./front_view.js"
+import {insert_element, flick, add_projects} from "./front_view.js"
 
 let add_project = document.querySelector('main')
 let class_name = ["left_content", "main_content", "right_content"]
@@ -14,8 +14,8 @@ document.querySelector("#add_project").innerHTML = "Add Project"
 
 insert_element(left_content,"form","id","project_name")
 let enter_name_projects = document.querySelector('#project_name')
-enter_name_projects.innerHTML = `<label for="fname">First name:</label>
-                                 <input type="text" id="fname" name="fname"><br><br>
+enter_name_projects.innerHTML = `<label for="fname">Project name:</label>
+                                 <input type="text" id="fname" name="Projectname" required><br><br>
                                  <input type="submit" value="Submit"> `
 
 // Local storage
@@ -23,3 +23,4 @@ enter_name_projects.innerHTML = `<label for="fname">First name:</label>
 
 // flick the add project form
 flick("#add_project","#project_name")
+add_projects()

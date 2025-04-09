@@ -1,13 +1,6 @@
 import "./style.css"
 import {Project, Todo} from "./todo.js";
 
-let project_one = new Project("Python Week 4 Assignment");
-let first_task = new Todo("DQ","This is a discussion Assignment","2025-06-10","Medium")
-let second_task = new Todo("Python Project Assignment","This is a discussion Assignment","2025-06-10","High")
-project_one.add_todo(first_task)
-project_one.add_todo(second_task)
-project_one.print_to_do()
-
 function insert_element(parent,element_name, class_or_id, attribute_name)
 {
     let content = document.createElement(element_name)
@@ -17,7 +10,10 @@ function insert_element(parent,element_name, class_or_id, attribute_name)
 
 function flick(button_id, id_class)
 {
-
+/*
+pass button class and id class
+ clicking on button_id will flick id_class
+ */
     document.addEventListener('DOMContentLoaded', function()
 {
     let m = document.querySelector(button_id)
@@ -34,4 +30,25 @@ function flick(button_id, id_class)
     )
 })
 }
-export {insert_element, flick}
+
+// when submitted take the input data and add project_name and (add,remove,edit) features
+function add_projects()
+{
+    let m = document.querySelector("#project_name")
+    m.addEventListener('submit', function(e){
+        e.preventDefault();
+
+        const formData = new FormData(this);
+        const Project_info = {
+            names : formData.get("Projectname")
+        };
+        let t = document.querySelector(".main_content")
+        insert_element(t,"div", "class", 'projectsname')
+        // let k = document.querySelector(".projectsname")
+        // k.innerHTML = `<h1>${Project_info['names']}</h1>`
+
+        return (new Project(Project_info['names']).print_to_do())
+
+    })
+}
+export {insert_element, flick, add_projects}

@@ -24,3 +24,9 @@ main > div
 {
     height: 80vh;
 }
+
+#add_project
+{
+    margin-top: 10px;
+    margin-bottom: 7%;
+}
